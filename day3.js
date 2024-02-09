@@ -17,18 +17,16 @@ for (let i = 1; i <= table; i++) {
 //Write a code to check whether string is palindrome or not
 //Example : 'madam' -> palindrome
 
-const inputString = "sadam";
+const inputString = "apa";
 let index = 0;
 let truePalindrome = true;
 for (let i = 0 ; i < inputString.length ; i++) {
     index++;
     let fromBeginner = i;
     let fromLast = inputString.length - index;
-    let splitedString = inputString.split("");
     console.log(fromBeginner);
     console.log(fromLast);
-    //console.log(splitedString);
-    if (splitedString[fromBeginner] != splitedString [fromLast]){
+    if (inputString.charAt(fromBeginner) != inputString.charAt(fromLast)){
         truePalindrome = false; 
         break;
     }
