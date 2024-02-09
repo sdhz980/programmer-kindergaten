@@ -174,7 +174,7 @@ Example : 400 days → 1 year, 1 month, 5 days
 Example: 366 days → 1 year, 0 month, 1 day
 */
 
-let convertDate = 366; //the number days will convert to
+let convertDate = 365; //the number days will convert to
 convertToDate = new Date(convertDate*1000*3600*24);
 let objectDate = {
     year: convertToDate.getFullYear()-1970,
