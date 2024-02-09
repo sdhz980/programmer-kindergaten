@@ -32,3 +32,43 @@ for (let i = 0 ; i < inputString.length ; i++) {
     }
 }
 console.log(truePalindrome ?  "A Palindrome String" : "Not A Palindrome String");
+
+
+// No 3
+//Write a code to convert centimeter to kilometer.
+//Example : 100000 -> 1km
+
+
+let centimeterNumber = 100000;
+console.log(`${centimeterNumber/100000} Km`);
+
+// No 4
+//Write a code to format number as currency (IDR)
+//Example : 1000 -> Rp.1.000,00
+
+
+const moneyFormat = new Intl.NumberFormat('id-ID',{
+    style: 'currency',
+    currency: 'IDR'
+});
+let numberMoney = 1000;
+console.log(moneyFormat.format(numberMoney));
+
+
+// No 5
+//Write a code to remove the first occurrence of a given "search string" from a string
+//Example : string = "Hello world",search string = "ell" -> "Ho world"
+
+
+let helloWorld = "hello world";
+let searchString = "ell"
+console.log(helloWorld.replace(searchString,""));
+
+
+// No 6
+//Write a code to capitalize the first letter of each word in a string
+//Example : "hello world" -> "Hello World"
+
+
+// Hello World Ikut Variable di atas
+console.log(helloWorld.split(" "));
