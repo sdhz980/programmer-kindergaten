@@ -70,5 +70,82 @@ console.log(helloWorld.replace(searchString,""));
 //Example : "hello world" -> "Hello World"
 
 
-// Hello World Ikut Variable di atas
-console.log(helloWorld.split(" "));
+let unCapString = "hello world";
+let unCapWord = unCapString.split(" ");
+for (let i = 0; i < unCapWord.length; i++) {
+    unCapWord[i] = unCapWord[i][0].toUpperCase() + unCapWord[i].substring(1);
+}
+console.log(unCapWord.toString().replace(",", " "));
+
+
+// No 7
+//Write a code to reverse a string.
+//Example : "hello" -> "olleh"
+
+
+let unReversedString = "hello";
+let reverseString = "";
+for (let i = unReversedString.length-1; i >= 0; i--) {
+    reverseString += unReversedString[i];
+}
+console.log(reverseString);
+
+
+// No 8
+//Write a code to swap the case of each character from string
+//Example: "The QuiCk BrOwN Fox" -> "tHE qUIcK bRoWn fOX"
+
+
+let quickBrownFox = "The QuiCk BrOwN Fox";
+let swappedQuickBronwFox = quickBrownFox.split("");
+let resultSwappedString = "";
+for (let i = 0; i < quickBrownFox.length;i++) {
+    if (swappedQuickBronwFox[i] == swappedQuickBronwFox[i].toLowerCase()) {
+        resultSwappedString += swappedQuickBronwFox[i].toUpperCase();
+    }   else resultSwappedString += swappedQuickBronwFox[i].toLowerCase();
+}
+console.log(resultSwappedString);
+
+
+// No 9
+//Write a code to find the largest of two given integers
+//Example: num1 = 42, num2 = 27 -> 42
+
+
+let integerNum1 = 42;
+let integerNum2 = 27;
+console.log(integerNum1 > integerNum2 ? `The largest Number is = ${integerNum1}` : `The largest Number is = ${integerNum2}`);
+
+
+// No 10
+//Write a conditional statement to sort three numbers
+//Example : num1 = 42 , num2 = 27 , num3 = 18 -> 18,27,42
+
+
+let nunum1 = 42;
+let nunum2 = 27;
+let nunum3 = 18;
+console.log(`The largest number is = ${Math.max(nunum1,nunum2,nunum3)}`);
+
+
+// No 11
+//Write a code that shows 1 if the input is a string, 2 if the input is a number, and 3 for other data types
+let stringDataType = "hello";
+let numberDataType = 2;
+let arrayDataType = [1,2,3];
+let inputDataType = stringDataType;
+
+if (typeof(inputDataType) == 'string') console.log(1);
+else if (typeof(inputDataType) == 'number') console.log(2);
+else console.log(3);
+
+
+// No 12
+//Write a code to change every letter a into * from a string of input
+//Example : 'An apple a day keeps the doctor away' -> `*n *pple * d*y keeps the doctor *w*y`
+
+
+let uncensoredString =  'An apple a day keeps the doctor away';
+let replacedChar = 'a';
+let censoredString = uncensoredString.replaceAll(replacedChar.toLowerCase(), "*").replaceAll(replacedChar.toUpperCase(), "*");
+console.log(censoredString)
