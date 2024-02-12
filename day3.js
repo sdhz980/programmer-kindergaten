@@ -137,9 +137,18 @@ let numberDataType = 2;
 let arrayDataType = [1,2,3];
 let inputDataType = numberDataType;
 
-if (typeof(inputDataType) == 'string') console.log(1);
-else if ('number') console.log(2);
-else console.log(3);
+// if (typeof(inputDataType) == 'string') console.log(1);
+// else if ('number') console.log(2);
+// else console.log(3);
+
+switch (typeof inputDataType) {
+    case 'string' : console.log(1);
+    break;
+    case 'number' : console.log(2);
+    break;
+    default : console.log(3);
+    break;
+}
 
 
 // No 12
