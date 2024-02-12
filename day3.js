@@ -130,13 +130,15 @@ console.log(`The largest number is = ${Math.max(nunum1,nunum2,nunum3)}`);
 
 // No 11
 //Write a code that shows 1 if the input is a string, 2 if the input is a number, and 3 for other data types
+
+
 let stringDataType = "hello";
 let numberDataType = 2;
 let arrayDataType = [1,2,3];
-let inputDataType = stringDataType;
+let inputDataType = numberDataType;
 
 if (typeof(inputDataType) == 'string') console.log(1);
-else if (typeof(inputDataType) == 'number') console.log(2);
+else if ('number') console.log(2);
 else console.log(3);
 
 
@@ -147,5 +149,5 @@ else console.log(3);
 
 let uncensoredString =  'An apple a day keeps the doctor away';
 let replacedChar = 'a';
-let censoredString = uncensoredString.replaceAll(replacedChar.toLowerCase(), "*").replaceAll(replacedChar.toUpperCase(), "*");
-console.log(censoredString)
+let resultCensoredString = uncensoredString.replaceAll(replacedChar.toLowerCase(), "*").replaceAll(replacedChar.toUpperCase(), "*");
+console.log(resultCensoredString);
