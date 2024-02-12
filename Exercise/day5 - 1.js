@@ -61,8 +61,12 @@ console.log(calculateArrIndex(integerArr1,integerArr2));
 // b. Example : arr = [1, 2, 3, 4], newElement = 7 → [1, 2, 3, 4, 7]
 
 let numberArr1 = [1, 2, 3, 4];
-function addEndArray(input) {
-    numberArr1;
+function addEndArray(input,inputArr) {
+    if (inputArr.find((num) => num == input)) return inputArr;
+    else {
+        inputArr.push(input);
+        return inputArr;
+    } 
 }
-let newElementArr = addEndArray(4);
+let newElementArr = addEndArray(5,numberArr1);
 console.log(newElementArr);
