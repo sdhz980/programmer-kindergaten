@@ -185,3 +185,122 @@
 // words.push("Jogja");
 // console.log(words);
 
+// Shift -> menghilangkan value yang paling depan dalam array
+// let words = ["hello","world"];
+// words.shift();
+// console.log(words);
+
+// UnShift -> menambahkan value ke urutan paling depan array
+// let words = ["hello","world"];
+// words.unshift("Purwadhika");
+// console.log(words);
+
+// Length -> menampilkan berapa banyak isi value dari sebuah array
+// let words = ['hello', 'world'];
+// console.log(words.length);
+
+// Concat -> menggabungkan 2 array menjadi 1 array
+// let arr1 = ["Hello"];
+// let arr2 = ["World"];
+// console.log(arr1.concat(arr2));
+// console.log(arr2.concat(arr1));
+
+// Splice -> untuk menghapus,mengganti atau menambahkan value pada sebuah array
+// Rumus -> splice(startIndex,brpYangMauDiDelete,item,item, ...dst)
+
+// Menambahkan Item
+// const months = ["Jan","March","April","June"];
+// months.splice(1,0,"Feb");
+// console.log(months);
+// // Menghapus Item
+// months.splice(4,1);
+// console.log(months);
+// // Mengedit Item
+// months.splice(3,1,"May");
+// console.log(months);
+
+// Slice -> mereturn new array dengan value yang sudah kita tentukan
+// index start dan index end nya dari sebuah array
+// Rumus -> slice(startIndex,endIndex)
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+// console.log(fruits.slice(1,3));
+
+// IndexOf -> mencari index dari value yang kita cari
+// Jika value tidak ada dalam array maka akan mereturn -1
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+// const index = fruits.indexOf("Apple");
+// console.log(index);
+
+// Sort -> mengurutkan isi array berupa string / number
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+// fruits.sort();
+// console.log(fruits);
+
+// const points = [8,9,4,5,6,2,16,5,4];
+// points.sort();
+// console.log(points);
+// console.log(points.sort((a,b) => a-b)); //Ascending
+// console.log(points.sort((a,b) => b-a)); //Descending
+
+
+// Reverse -> membalikkan urutan elemen di dalam array
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+// fruits.reverse();
+// console.log(fruits);
+
+// ForEach -> hanya di gunakan untuk looping pada array, dan tidak mereturn apapun
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+
+// const result = fruits.forEach((fruit) => {
+//     console.log(fruit);
+//     return fruit;
+// });
+
+// console.log(result); //Hasilnya undefined
+
+// Map -> sama seperti forEach melakukan looping tapi menghasilkan return array baru
+
+// const resultWithMap = fruits.map((fruit) => {
+// console.log(fruit);
+//     return fruit;
+// });
+
+// console.log(resultWithMap); //Menghasilkan return
+
+// Filter -> melakukan looping juga dan akan menghasilkan array baru berdasarkan
+//          kondisi yang di masukkan
+
+// const ages = [32,33,16,40];
+// // const result = ages.filter((age) => age >= 18);
+// const result = ages.filter((age) => {
+//     return age >= 18});
+
+// console.log(result);
+
+// Find -> mencari value yang ditemukan pertama kali dalam array
+
+// const ages = [32,33,16,40];
+// const result = ages.find((age) => age > 33);
+// console.log(result);
+
+// Reduce -> biasa di gunakan untuk operasi aritmatika pada tiap isi array
+//           dan mereturn hasil dari operasi tersebut
+
+// const numbers = [120,100,300];
+// const result = numbers.reduce((a,b) => a +b);
+// const result1 = numbers.reduce((a,b) => {
+//     return a + b ;
+// });
+// console.log(result);
+// console.log(result1);
+
+// Includes -> mengecek value pada array ada apa tidak,jika ada bakal 
+//            mereturn true,jika tidak akan mereturn false
+
+// const fruits = ["Banana","Orange","Lemon","Apple","Manggo",];
+// console.log(fruits.includes("Orangesss"));
