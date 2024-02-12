@@ -5,7 +5,6 @@
 //Write a code to display the multiplication table of a given integer;
 //example given integer is 9
 
-
 const input = 9;
 const table = 10;
 
