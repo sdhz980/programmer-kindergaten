@@ -34,10 +34,10 @@ console.log(triangleNum(triangleHeight));
 function fazzFizzFuzzy(input) {
     let result = ""
     for (let i = 1; i <= input;i++) {
-        if (i % 5 == 0 && i % 3 == 0) result += "fizzbuzz" + " "
-        else if (i % 3 == 0 ) result += "fizz" + " "
-        else if (i % 5 == 0 ) result += "buzz" + " "
-        else result += i.toString() + " ";
+        if (i % 3 == 0 && i % 5 == 0) result += "FizzBuzz" + " \n";
+        else if (i % 3 == 0 ) result += "Buzz" + ", \n";
+        else if (i % 5 == 0 ) result += "Fizz" + ", \n";
+        else result += i.toString() + ", \n";
     }
     return result;
 }
@@ -58,15 +58,15 @@ console.log(fazzFizzFuzzy(15));
 function bmiCalculator (weight,height) {
     let bmi = (weight / (height ** 2)).toFixed(1);
     let result = "";
-    if (bmi < 18.5) result = `your bmi was = ${bmi} and you less weight`
-    else if (bmi >= 18.5 && bmi < 24.9) result = `your bmi was = ${bmi} and you ideal`
-    else if (bmi >= 25 && bmi < 29.9) result = `your bmi was = ${bmi} and you overweight`
-    else if (bmi >= 30 && bmi < 39.9) result = `your bmi was = ${bmi} and you very overweight`
-    else result = `your bmi was = ${bmi} and you obesity`
-    return result;
+    if      (bmi < 18.5) result = `less weight`
+    else if (bmi >= 18.5 && bmi < 24.9) result = `ideal`
+    else if (bmi >= 25 && bmi < 29.9) result = `overweight`
+    else if (bmi >= 30 && bmi < 39.9) result = `very overweight`
+    else result = `obesity`
+    return `your bmi was = ${bmi} and you ${result}`;
 }
 
-console.log(bmiCalculator(150,1.8));
+console.log(bmiCalculator(55,1.4));
 
 
 // Write a function to remove all odd numbers in an array and return a new array that contains even
@@ -90,6 +90,67 @@ function decideEvenNumber (data) {
         }
     });
 }
-console.log(decideEvenNumber([1,2,3,4,5,6,7,8,9,10]));
-console.log(decideEvenNumber(numberCollection));
 
+// Simple way 
+function removeOddNumber (arr) {
+    return arr.filter((item) => item % 2 == 0);
+}
+
+// Without Built in Method
+function removeOddNumber2 (arr) {
+    let result = [];
+    for (let i = 0; i < arr.length ; i ++) {
+        if (arr[i] % 2 == 0 ) result.push(arr[i]);
+    };
+    return result
+}
+
+console.log(removeOddNumber([1,2,3,4,5,6,7,8,9,10,11,12]));
+console.log(removeOddNumber2([1,2,3,4,5,6,7,8,9,10,11,12,13,14]));
+
+console.log(decideEvenNumber([1,2,3,4,5,6,7,8,9,10]));
+
+
+// Write a function to split a string and convert it into an array of words
+// ○ Example : “Hello World” → [“Hello”, “World”]
+
+// With Built in Method
+let helloWorld = "Hello World";
+function splitString(data) {
+    return data.split(" ")
+}
+
+// No Built in Method
+function splitStringWithout(data) {
+    let cacheData = "";
+    let result = [];
+    for (let i = 0; i <= data.length; i++) {
+        if (data[i] === ' ' || i === data.length) {
+            result.push(cacheData);
+            cacheData = "";
+        }
+        else cacheData += data[i];
+    }
+    return result;
+}
+
+// Cara kak Daniel
+const splitString1 = function (input) {
+    const kata = [];
+    let tmp = "";
+
+    for (i=0;i<input.length;i++) {
+        if (input[i] == " ") {
+            kata.push(tmp);
+            tmp = "";
+            continue;
+        }
+        tmp += input[i];
+    }
+    kata.push(tmp);
+    return kata;
+};
+
+console.log(splitString(helloWorld));
+console.log(splitString1(helloWorld));
+console.log(splitStringWithout(helloWorld));
