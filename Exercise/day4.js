@@ -90,8 +90,25 @@ function decideEvenNumber (data) {
         }
     });
 }
+
+// Simple way 
+function removeOddNumber (arr) {
+    return arr.filter((item) => item % 2 == 0);
+}
+
+// Without Built in Method
+function removeOddNumber2 (arr) {
+    let result = [];
+    for (let i = 0; i < arr.length ; i ++) {
+        if (arr[i] % 2 == 0 ) result.push(arr[i]);
+    };
+    return result
+}
+
+console.log(removeOddNumber([1,2,3,4,5,6,7,8,9,10,11,12]));
+console.log(removeOddNumber2([1,2,3,4,5,6,7,8,9,10,11,12,13,14]));
+
 console.log(decideEvenNumber([1,2,3,4,5,6,7,8,9,10]));
-console.log(decideEvenNumber(numberCollection));
 
 
 // Write a function to split a string and convert it into an array of words
@@ -108,7 +125,7 @@ function splitStringWithout(data) {
     let cacheData = "";
     let result = [];
     for (let i = 0; i <= data.length; i++) {
-        if (data[i] == ' ' || i == data.length) {
+        if (data[i] === ' ' || i === data.length) {
             result.push(cacheData);
             cacheData = "";
         }
@@ -117,5 +134,23 @@ function splitStringWithout(data) {
     return result;
 }
 
+// Cara kak Daniel
+const splitString1 = function (input) {
+    const kata = [];
+    let tmp = "";
+
+    for (i=0;i<input.length;i++) {
+        if (input[i] == " ") {
+            kata.push(tmp);
+            tmp = "";
+            continue;
+        }
+        tmp += input[i];
+    }
+    kata.push(tmp);
+    return kata;
+};
+
 console.log(splitString(helloWorld));
+console.log(splitString1(helloWorld));
 console.log(splitStringWithout(helloWorld));
