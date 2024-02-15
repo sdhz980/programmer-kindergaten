@@ -72,18 +72,18 @@ console.log(sumDuplicate(arrayNumberLagi));
 // a. Example: if you throw a rock as an argument and the function pick a scissor then it will return 'Win'
 
 function rockPaperScissor (yourTurn) {
-    let RNG = Math.floor(Math.random() * 2.9);
-    function decideTheWinner(input) {
-        if(input === 'rock' && RNG == 0) return "Tie"
-        else if (input === 'rock' && RNG == 1) return "You Lose"
-        else if (input === 'rock' && RNG == 2) return "You Win";
-        else if (input === 'paper' && RNG == 0) return "You Win";
-        else if (input === 'paper' && RNG == 1) return "Tie";
-        else if (input === 'paper' && RNG == 2) return "You Lose";
-        else if (input === 'scissor' && RNG == 0) return "You Lose";
-        else if (input === 'scissor' && RNG == 1) return "You Win";
-        else if (input === 'scissor' && RNG == 2) return "Tie";
+    const Choices = ['batu','gunting','kertas']
+    const compChoices = Choices[Math.floor(Math.random() * 2.9)];
+    
+    if (!Choices.includes(yourTurn)) {
+        return "wrong input"
     }
-    return decideTheWinner(yourTurn);
-}
-console.log(rockPaperScissor('rock'));
+    if (yourTurn === compChoices) return 'draw'
+    if (yourTurn === 'batu' && compChoices === 'gunting' ||
+        yourTurn === 'gunting' && compChoices === 'kertas' ||
+        yourTurn === 'kertas' && compChoices === 'batu'
+        ) return 'win'
+
+        return 'lose';
+    }
+console.log(rockPaperScissor('batu'));
