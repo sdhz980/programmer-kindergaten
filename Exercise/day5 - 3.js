@@ -72,7 +72,7 @@ console.log(sumDuplicate(arrayNumberLagi));
 // a. Example: if you throw a rock as an argument and the function pick a scissor then it will return 'Win'
 
 function rockPaperScissor (yourTurn) {
-    let RNG = Math.floor(Math.random() * 3);
+    let RNG = Math.floor(Math.random() * 2.9);
     function decideTheWinner(input) {
         if(input === 'rock' && RNG == 0) return "Tie"
         else if (input === 'rock' && RNG == 1) return "You Lose"
