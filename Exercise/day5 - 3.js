@@ -3,6 +3,14 @@
 // a. The function will return [1, undefined, “string”]
 
 let arrPrimitive = [1, [], undefined, {}, "string", {}, []];
+function returnArrayType (Arr) {
+    const tmp = [];
+    for (let i = 0; i < Arr.length;i++) {
+        tmp.push(typeof Arr[i]);
+    }
+    return tmp;
+}
+console.log(returnArrayType(arrPrimitive));
 
 // 2. Write a function from a given array of numbers and return the second smallest number
 // a. Example : numbers = [5, 3, 1, 7, 2, 6] → 2
@@ -30,14 +38,34 @@ console.log(sumNumberArr(mixedArray));
 
 let arrayNumberLagi = [10, 20, 40, 10, 50, 30, 10, 60, 10];
 function sumNumberArrLagi (mixed) {
-    const tmp = [];
-    let result;
-    for (let i = 0;i < mixed.length;i++) {
-            
-    }
-    return tmp;
+    const tmpArr = [];
+    console.log(!mixed.includes(10) )
+    const process = mixed.filter((item,index) => {
+        if (index === 0)  tmpArr.push(item);
+        if (mixed.indexOf(item) !== index) {
+            tmpArr.push(item);
+        }
+    }); 
+    return tmpArr.reduce((a,b) => a +b );
 }
 console.log(sumNumberArrLagi(arrayNumberLagi));
+
+function sumDuplicate (Arr) {
+    const duplicateValues = Arr.filter((value,index,array) => {
+        // jadi patokan untuk mengecek di looping kedua
+        return array.indexOf(value) !== index;
+    });
+    console.log(duplicateValues);
+    
+    let result = 0;
+    for (let item of Arr) {
+        if (duplicateValues.includes(item)) {
+            result += item;
+        }
+    }
+    return result;
+}   
+console.log(sumDuplicate(arrayNumberLagi));
 
 // 5. Write a game of rock, paper, scissor function that will return 'Win' or 'Lose'. The function will randomly pick
 // between rock, paper, or scissor.
