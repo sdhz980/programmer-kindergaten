@@ -4,13 +4,13 @@
 
 let numArr = [12, 5, 23, 18, 4, 45, 32];
 function calculateNum (data) {    
-    let lowest;
-    let highest;
-    let average;
-    lowest = Math.min(...data);
-    highest = Math.max(...data);
-    average = data.reduce((a,b) => a+b) / data.length;
-    average = average.toFixed(5);
+    let lowest = Math.min(...data);
+    let highest = Math.max(...data);
+    let average = (data.reduce((a,b) => a+b) / data.length).toFixed(5);
+    // lowest = Math.min(...data);
+    // highest = Math.max(...data);
+    // average = data.reduce((a,b) => a+b) / data.length;
+    // average = average.toFixed(5);
     return `lowest : ${lowest}, highest: ${highest}, average: ${average};`
 }
 console.log(calculateNum(numArr));
@@ -68,5 +68,5 @@ function addEndArray(input,inputArr) {
         return inputArr;
     } 
 }
-let newElementArr = addEndArray(5,numberArr1);
+let newElementArr = addEndArray(7,numberArr1);
 console.log(newElementArr);

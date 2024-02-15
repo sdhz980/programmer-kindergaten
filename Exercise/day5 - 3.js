@@ -30,11 +30,12 @@ console.log(sumNumberArr(mixedArray));
 
 let arrayNumberLagi = [10, 20, 40, 10, 50, 30, 10, 60, 10];
 function sumNumberArrLagi (mixed) {
-    let result ;
-    let removedDuplicateNumber = mixed => mixed.filter((Num) => {
-        return Num == Num;
-    });
-    return removedDuplicateNumber(mixed);
+    const tmp = [];
+    let result;
+    for (let i = 0;i < mixed.length;i++) {
+            
+    }
+    return tmp;
 }
 console.log(sumNumberArrLagi(arrayNumberLagi));
 

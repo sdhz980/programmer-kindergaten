@@ -48,7 +48,14 @@ console.log(duplicatedElement);
 
 let arrayArray1 = [1, 2, 3, 4, 5];
 let arrayArray2 = [3, 4, 5, 6, 7];
-let differenceNumber = arrayArray1.filter((anum) => {
-    return arrayArray2.find((numA) => numA == anum);
-});
-console.log(differenceNumber);
+function differenceArray (firstArr,secondArr) {
+    const result = [];
+    for (let i = 0; i < firstArr.length; i++) {
+        if (!secondArr.includes(firstArr[i])) result.push(firstArr[i]);
+    }
+    for (let i = 0; i < secondArr.length; i++) {
+        if (!firstArr.includes(secondArr[i])) result.push(secondArr[i]);
+    }
+    return result;
+}
+console.log(differenceArray(arrayArray1,arrayArray2));
