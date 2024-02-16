@@ -206,36 +206,36 @@
 // Class Parent -> property1,property2,property3
 // Class Child -> bisa mengakses property1,property2,property3
 
-// class Product {
-//     constructor (productName,price) {
-//         this.productName = productName;
-//         this.price = price;
-//     };
-//     show(){
+class Product {
+    constructor (productName,price) {
+        this.productName = productName;
+        this.price = price;
+    };
+    show(){
 
+    }
+};
+
+// class Book {
+//     constructor () {
+//         this.productName;
+//         this.price;
+//         this.author;
 //     }
-// };
+// }
 
-// // class Book {
-// //     constructor () {
-// //         this.productName;
-// //         this.price;
-// //         this.author;
-// //     }
-// // }
+class Book extends Product {
+    constructor (productName,price,author) {
+        super(productName,price,author);
+        this.author = author;
+    };
+    show(){
+    }
+};
 
-// class Book extends Product {
-//     constructor (productName,price,author) {
-//         super(productName,price,author);
-//         this.author = author;
-//     };
-//     show(){
-//     }
-// };
-
-// const book1 = new Book("Buku 1",10000,"Komeng");
-// console.log(book1);
-// book1.show;
+const book1 = new Book("Buku 1",10000,"Komeng");
+console.log(book1);
+book1.show;
 
 
 // Instance Of -> Mengecek apakah sebuah object memiliki hubungan ke class tertentu / tidak
