@@ -124,3 +124,96 @@
 
 // console.log(flat(exArray,1));
 
+// 2618. Check if Object Instance of Class
+
+// var checkIfInstanceOf = function(obj, classFunction) {
+//     let result = false;
+//     const array = []
+    
+//     try {
+//         const isEnd = true;
+//         const proto = ['__proto__']
+//         let pos = obj[proto];
+//         pos = pos[proto];
+//         if (classFunction.constructor.name !== 'Function') return result;
+        
+//         if (obj.constructor.name == classFunction.name || classFunction.name == 'Object') return result = true;
+        
+//         while (isEnd) {
+//             if (pos.constructor.name == 'Object' || pos.constructor.name == classFunction.name) {
+//                 if (array[array.length-1] == classFunction.name || pos.constructor.name == classFunction.name) return result = true;
+//                 isEnd = false;
+//             }
+//             else {
+//                 array.push(pos.constructor.name)
+//                 pos = pos[proto];
+//             }
+//         }
+//         return result;
+//       }
+//       catch(err) {
+//         return result;
+//       }
+
+// };
+
+// const testObj = func = () => { 
+// class X {};
+// class C21 {}
+// class C0 extends Object {};
+// class C1 extends C0 {};
+// class C2 extends C1 {};
+// class C3 extends C2 {};
+// class C4 extends C3 {};
+// class C5 extends C4 {};
+// class C6 extends C5 {};
+// class C7 extends C6 {};
+// class C8 extends C7 {};
+// class C9 extends C8 {};
+// return checkIfInstanceOf(new C9(), C0); }
+
+// const testObj = func = () => checkIfInstanceOf(Error(), Error);
+
+// const testObj = func = () =>{ 
+// class X {};
+// class C0 extends Object {};
+// class C1 extends C0 {};
+// class C2 extends C1 {};
+// class C3 extends C2 {};
+// class C4 extends C3 {};
+// class C5 extends C4 {};
+// class C6 extends C5 {};
+// class C7 extends C6 {};
+// class C8 extends C7 {};
+// class C9 extends C8 {};
+// return checkIfInstanceOf(new C9(), C5);}
+
+// console.log((testObj()));
+
+// 2722. Join Two Arrays by ID
+
+var join = function(arr1, arr2) {
+    const newArr = arr1.concat(arr2);
+    console.log(newArr);
+    tmpObj = {}
+    newArr.map((value) => {
+        for (const [key,val] of Object.entries(value)) {
+            Object.assign(tmpObj,{[key] : val})
+            newObj.push(tmpObj)
+        }
+    })
+    return tmpObj;
+};
+
+arr1 = [
+    {"id": 1, "x": 1},
+    {"id": 2, "x": 9}
+], 
+arr2 = [
+    {"id": 3, "x": 5}
+]
+
+newObj = []
+
+console.log(join(arr1,arr2))
+
