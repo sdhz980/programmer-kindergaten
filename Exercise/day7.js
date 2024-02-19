@@ -12,7 +12,7 @@
 //     ○ Output: true
 
 // const obj1 = { a : 2 , b: 1};
-// const obj2 = { a : 2 };
+// const obj2 = { a : 2 , b: 1};
 
 // function checkEqual (ob1,ob2) {
 //     let isEqual = false;
@@ -38,22 +38,23 @@
 //     ○ Output: { a: 1 }
 
 // const objEct1 = {a: 1, b: 2};
-// const objEct2 = {a: 1, c: 3};
+// const objEct2 = {a: 1, b: 3, c:1};
 
-// function findIntersection (obj1,obj2) {
-//     const tmp1 = Object.keys(obj1);
-//     const tmp2 = Object.keys(obj2);
-//     let result = '';
+// const intersection = (obj1,obj2) => {
+//     // console.log(obj1);
+//     // console.log(obj2);
 
-//     console.log(tmp1);
-//     console.log(tmp2);
-//     for (let i = 0;i < tmp1.length;i++) {
-        
+//     const duplicate = {};
+
+//     for (let key in obj1) {
+//         if (obj1[key] == obj2[key]) {
+//             duplicate[key] = obj1[key];
+//         }
 //     }
+//     return duplicate;
+// };
 
-// }
-
-// console.log(findIntersection(objEct1,objEct2))
+// console.log(intersection(objEct1,objEct2))
 
 // Exercise
 
@@ -76,6 +77,32 @@
 //         { name: ‘Student 3’, email : ‘student3@mail.com’ }
 //         ]
 
+// const studentArr1 = [
+//             { name: 'Student 1', email : 'student1@mail.com' },
+//             { name: 'Student 2', email : 'student2@mail.com' }
+//             ]
+// const studentArr2 = [
+//             { name: 'Student 1', email : 'student1@mail.com' },
+//             { name: 'Student 3', email : 'student3@mail.com' }
+//             ]
+
+// const removeDuplicate = (arr1,arr2) => {
+//     const combinedArr = [...arr1,...arr2];
+//     const temp = [];
+
+//     for(let i = 0; i< combinedArr.length;i++) {
+//         const duplicateValue = temp.filter((val) => {
+//             return (val.email === combinedArr[i].email);
+//         })
+//         if (!duplicateValue.length) {
+//             temp.push(combinedArr[i]);
+//         }
+//     }
+//     return temp;
+// }
+
+// console.log(removeDuplicate(studentArr1,studentArr2));
+
 // Exercise
 
 // ● Create a function that can accept input as an array of objects and switch all values into property and
@@ -88,6 +115,7 @@
 // const resRevObj = [{}]
 
 // function reverseObject(obj) {
+
 //     for (let i = 0; i< obj.length;i++) {
 //         let tmpKeys = Object.keys(obj[i]);
 //         let tmpArray = [];
@@ -104,6 +132,20 @@
 
 // reverseObject(exObj);
 // console.log(resRevObj);
+
+// const arrData = [{ name : 'David', age: 20}]
+// const switchValueToKey = (arr) => {
+//     const result = [];
+//     arr.forEach((item) => {
+//         let temp = {};
+//         for (let key in item) {
+//             temp[item[key]] = key;
+//         }
+//         result.push(temp);
+//     })
+//     return result;
+// }
+// console.log(switchValueToKey(arrData));
 
 // Exercise
 
@@ -144,4 +186,16 @@
 //     return result;
 // }
 
-// console.log(recursFuncname(6));
+// console.log(recursFuncname(5));
+
+// const curesedFunc = (num) => {
+//     let pos = num;
+//     let result = num;
+//     while (pos > 1) {
+//         pos --;
+//         result *= pos;
+//     }
+//     return result;
+// }
+
+// console.log(curesedFunc(6));
