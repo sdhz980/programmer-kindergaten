@@ -30,49 +30,70 @@
 //         this.Player1 = Player1;
 //         this.Player2 = Player2;
 //     }
-//     getRandomItem() {
-//         const randomItem = (Math.floor(Math.random() *4));
-//         switch(randomItem) {
-//             case 1 : return {health : 10, power : 0}
-//             break;
-//             case 2 : return {health : 0, power : 10}
-//             break;
-//             case 3 : return {health : 10, power : 10}
-//             break;
-//             default: return {health : 0, power : 0}
-//         }
-//     }
+    // getRandomItem() {
+    //     const randomItem = (Math.floor(Math.random() *4));
+    //     switch(randomItem) {
+    //         case 1 : return {health : 10, power : 0}
+    //         break;
+    //         case 2 : return {health : 0, power : 10}
+    //         break;
+    //         case 3 : return {health : 10, power : 10}
+    //         break;
+    //         default: return {health : 0, power : 0}
+    //     }
+    // }
 
+    // Function sesuai cara kak daniel
+    // getRandomItem() {
+    //     const health = Math.floor() < 0.5 ? 0 : 10;
+    //     const power = Math.floor() < 0.5 ? 0 : 10;
+    //     //memasukkan objek apabila value dan key sama tinggal pakai satu variable aja seperti di bawah
+    //     return {health,power}
+    // }
+
+    // start() {
+    //     this.Player1.showStatus()
+    //     this.Player2.showStatus();
+    //     console.log(`\n Item added to each Player \n`)
+    //     this.Player1.useItem(this.getRandomItem());
+    //     this.Player2.useItem(this.getRandomItem());
+    //     // this.Player1.showStatus()
+    //     // this.Player2.showStatus();
+    //     while (this.Player2.health >= 0) {
+    //         // console.log(this.Player2.name + " hit " + this.Player1.name);
+    //         this.Player1.hit(this.Player2.power);
+    //         // this.Player1.showStatus()
+    //         if (this.Player1.health <= 0) break;
+    //         // console.log(this.Player1.name + " hit " + this.Player2.name);
+    //         this.Player2.hit(this.Player1.power);
+    //         // this.Player2.showStatus();
+    //     } 
+    //     if (this.Player1.health == this.Player2.health) console.log("Tie")
+    //     if (this.Player1.health > this.Player2.health) console.log(`Congrats ${this.Player1.name} You Are The Winner`)
+    //     else if (this.Player1.health < this.Player2.health) console.log(`Congrats ${this.Player2.name} You Are The Winner`)
+    // }
+
+    //Cara kak daniel
 //     start() {
-//         this.Player1.showStatus()
-//         this.Player2.showStatus();
-//         console.log(`\n Item added to each Player \n`)
-//         this.Player1.useItem(this.getRandomItem());
-//         this.Player2.useItem(this.getRandomItem());
-//         // this.Player1.showStatus()
-//         // this.Player2.showStatus();
-//         while (this.Player2.health >= 0) {
-//             // console.log(this.Player2.name + " hit " + this.Player1.name);
-//             this.Player1.hit(this.Player2.power);
-//             // this.Player1.showStatus()
-//             if (this.Player1.health <= 0) break;
-//             // console.log(this.Player1.name + " hit " + this.Player2.name);
-//             this.Player2.hit(this.Player1.power);
-//             // this.Player2.showStatus();
-//         } 
-//         if (this.Player1.health == this.Player2.health) console.log("Tie")
-//         if (this.Player1.health > this.Player2.health) console.log(`Congrats ${this.Player1.name} You Are The Winner`)
-//         else if (this.Player1.health < this.Player2.health) console.log(`Congrats ${this.Player2.name} You Are The Winner`)
+//         console.log(this.Player1.showStatus())
+//         while(this.Player1.health > 0 && this.Player2 > 0) {
+//             this.Player2.showStatus()
+//         }
 //     }
 
 // }
 
 // class Player {
-//     health = 100;
-//     power = 10;
-    
-//     constructor (name) {
+
+//     // constructor (name) {
+//     //     this.name = name;
+//     // }
+
+//     //Cara pakai constructor kak Daniel
+//     constructor (name,health = 100,power = 10) {
 //         this.name = name;
+//         this.health = health;
+//         this.power = power;
 //     }
 
 //     hit(power) {
