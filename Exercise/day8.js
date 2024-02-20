@@ -116,80 +116,80 @@
 //     ○ Use inheritance concept
 
 
-class Employee {
-    constructor (...Employee) {
-        this.Employee = Employee;
-        this.moneyFormat = new Intl.NumberFormat ('id-ID' , {
-            style:'currency',
-            currency: 'IDR',
-            maximumSignificantDigits : 3,
-        })
-    }
+// class Employee {
+//     constructor (...Employee) {
+//         this.Employee = Employee;
+//         this.moneyFormat = new Intl.NumberFormat ('id-ID' , {
+//             style:'currency',
+//             currency: 'IDR',
+//             maximumSignificantDigits : 3,
+//         })
+//     }
 
-    addWorkingHour(name,hour) {
-        this.Employee.map((a,b) => {
-            if (a.name == name) {
-                if (!a.workingHour) a.workingHour = 0;
-                a.workingHour += hour;
-            }
-        });
-        return 'Input data working hour berhasil'
-    };
+//     addWorkingHour(name,hour) {
+//         this.Employee.map((a,b) => {
+//             if (a.name == name) {
+//                 if (!a.workingHour) a.workingHour = 0;
+//                 a.workingHour += hour;
+//             }
+//         });
+//         return 'Input data working hour berhasil'
+//     };
 
-    addEmployee(employeeData) {
-        this.Employee.push(employeeData)
-        return 'Input Employee berhasil';
-    }
+//     addEmployee(employeeData) {
+//         this.Employee.push(employeeData)
+//         return 'Input Employee berhasil';
+//     }
 
-    calculateTotalSalary(name) {
-        let result = '';
-        this.Employee.forEach((a,b) => {
-            if (a.name == name) {
-                switch (a.type.toLowerCase()) {
-                    case 'part' : {
-                        result = partTimeClass.calculate(a.workingHour)
-                    }
-                    break;
-                    case 'full' : {
-                        result = fullTimeClass.calculate(a.workingHour)
-                    }
-                    break;
-                }
-            } 
-        });
-        return `${this.moneyFormat.format(result)}`;
-    }
+//     calculateTotalSalary(name) {
+//         let result = '';
+//         this.Employee.forEach((a,b) => {
+//             if (a.name == name) {
+//                 switch (a.type.toLowerCase()) {
+//                     case 'part' : {
+//                         result = partTimeClass.calculate(a.workingHour)
+//                     }
+//                     break;
+//                     case 'full' : {
+//                         result = fullTimeClass.calculate(a.workingHour)
+//                     }
+//                     break;
+//                 }
+//             } 
+//         });
+//         return `${this.moneyFormat.format(result)}`;
+//     }
 
-};
+// };
 
-class FulltimeEmployee extends Employee {
-    calculate(workingHour) {
-        if (workingHour > 6) {
-            return ((6 * 100000) + ((workingHour - 6) * 75000));
-        }
-        else return workingHour * 100000;
-    }
-}
+// class FulltimeEmployee extends Employee {
+//     calculate(workingHour) {
+//         if (workingHour > 6) {
+//             return ((6 * 100000) + ((workingHour - 6) * 75000));
+//         }
+//         else return workingHour * 100000;
+//     }
+// }
 
-class ParttimeEmployee extends Employee {
-    calculate(workingHour) {
-        if (workingHour > 6) {
-            return ((6 * 50000) + ((workingHour - 6) * 30000));
-        }
-        else return workingHour * 50000;
-    }
-}
+// class ParttimeEmployee extends Employee {
+//     calculate(workingHour) {
+//         if (workingHour > 6) {
+//             return ((6 * 50000) + ((workingHour - 6) * 30000));
+//         }
+//         else return workingHour * 50000;
+//     }
+// }
 
-const partTimeClass = new ParttimeEmployee();
-const fullTimeClass = new FulltimeEmployee();
-const employeePart = new Employee({name : 'Andi' , type : 'Part' , workingHour : 0} , 
-                                  {name : 'Bagas' , type : 'Full' , workingHour : 0} , 
-                                  {name : 'Catur' , type : 'Full' , workingHour : 0} ,
-                                  {name : 'Dede' , type : 'Full' , workingHour : 0});
+// const partTimeClass = new ParttimeEmployee();
+// const fullTimeClass = new FulltimeEmployee();
+// const employeePart = new Employee({name : 'Andi' , type : 'Part' , workingHour : 0} , 
+//                                   {name : 'Bagas' , type : 'Full' , workingHour : 0} , 
+//                                   {name : 'Catur' , type : 'Full' , workingHour : 0} ,
+//                                   {name : 'Dede' , type : 'Full' , workingHour : 0});
 
 
-console.log(employeePart.addWorkingHour('Bagas',7));
+// console.log(employeePart.addWorkingHour('Bagas',7));
 
-console.log(employeePart.calculateTotalSalary('Bagas'));
+// console.log(employeePart.calculateTotalSalary('Bagas'));
 
-console.log(employeePart);
+// console.log(employeePart);
