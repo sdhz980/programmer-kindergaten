@@ -81,9 +81,13 @@
 
 // }
 
+// console.time('test');
+
 // const trainFunc = new Train();
 
 // console.log(trainFunc.passengerIn('Robert'));
+
+// console.log(trainFunc.passengerIn('Bob'));
 
 // console.log(trainFunc.showPassenger());
 
@@ -92,6 +96,8 @@
 // console.log(trainFunc.passengerOut('Bob'));
 
 // console.log(trainFunc.showPassenger());
+
+// console.timeEnd('test');
 
 // NO 2
 
@@ -109,17 +115,112 @@
 //     input = "085244455555"
 //     output = "(6285)-2444-55555"
 
-// function phoneNumber (inputNumber) {
-//     isTrueNum = false;
-//     const numArr = inputNumber.split('');
-//     if (numArr [0] == 0) {
-//         numArr.shift();
-//     } else if (numArr[0] == 6 && numArr[1] == 2) {
-//         numArr.shift();
-//         numArr.shift();
-//     } else return `${inputNumber} is not a valid phone number`;
-//     if (inputNumber.length > 10) return `(62${numArr.splice(0,2).join('')})-${numArr.splice(0,4).join('')}-${numArr.join('')}`
-//     else return `${inputNumber} is not a valid phone number`;
-// }
 
-// console.log(phoneNumber('085726461545'))
+function phoneNumber (inputNumber) {
+    isTrueNum = false;
+    if (typeof inputNumber !== 'string') return 'wrong input';
+    const numArr = inputNumber.split('');
+    
+    if (numArr [0] == 0 ) {
+        numArr.shift();
+    } else if (numArr[0] == 6 && numArr[1] == 2) {
+        numArr.shift();
+        numArr.shift();
+    } else return `${inputNumber} is not a valid phone number`;
+    
+    if (inputNumber.length >= 12) return `(62${numArr.splice(0,2).join('')})-${numArr.splice(0,4).join('')}-${numArr.join('')}`
+    else return `${inputNumber} is not a valid phone number`;
+    
+}
+
+console.time('test phone Function');
+
+console.log(phoneNumber('085244455555'));
+
+console.timeEnd('test phone Function');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///
+
+class Train {
+    constructor() {
+        this.container = ['masinis'];
+        this.maxSize = 10;
+    }
+
+    #isFull () {
+        return this.container.length === this.maxSize;
+    }
+
+    #isEmpty () {
+        return this.container.length === 0;
+    }
+
+    showPassenger () {
+        return{
+        passengger : this.container,
+        remainingSeat : this.maxSize - this.container.length,
+        };
+    }
+
+    passengerIn (name) {
+        if(this.#isFull()) {
+            return 'train full';
+        }
+
+        if (this.container.includes(name)) {
+            return 'passengger already exist';
+        }
+
+        this.container.push(name);
+        return 'add passengger success';
+
+    }
+
+    passengerOut (name) {
+        if (name === 'masinis') {
+            return 'cannot remove masinist';
+        }
+
+        if(this.#isEmpty()) {
+            return 'train empty';
+        }
+
+        const index = this.container.indexOf(name);
+
+        if (index === -1) {
+            return 'passenger not found';
+        }
+
+        this.container.splice(index,1);
+
+    }
+
+}
+
+const train = new Train();
+
+console.log(train.passengerIn('Budi'));
+console.log(train.passengerIn('Bobby'));
+console.log(train.passengerIn('Bobby'));
+console.log(train.passengerIn('Tarno'));
+console.log(train.passengerIn('Sule'));
+console.log(train.passengerIn('Ronaldo'));
+
+
+console.log();
+console.log();

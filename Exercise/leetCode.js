@@ -192,28 +192,108 @@
 
 // 2722. Join Two Arrays by ID
 
-var join = function(arr1, arr2) {
-    const newArr = arr1.concat(arr2);
-    console.log(newArr);
-    tmpObj = {}
-    newArr.map((value) => {
-        for (const [key,val] of Object.entries(value)) {
-            Object.assign(tmpObj,{[key] : val})
-            newObj.push(tmpObj)
-        }
-    })
-    return tmpObj;
+// var join = function(arr1, arr2) {
+//     const result = {};
+//     for (let i = 0; i < arr1.length; i++) {
+//         result[arr1[i].id] = arr1[i];
+//     } 
+//     for (let i = 0; i < arr2.length; i++) {
+//         if (result[arr2[i].id]) {
+//             for (const key in arr2[i]) result[arr2[i].id][key] = arr2[i][key];  
+//         } else {
+//             result[arr2[i].id] = arr2[i];
+//         }
+//     } 
+
+//     return Object.values(result);
+// };
+
+// arr1 = [{"id":1,"x":36,"d":26,"f":35},{"id":3,"c":20,"z":75}]
+// arr2 = [{"id":2,"o":48,"z":84,"y":61}]
+
+// console.log(join(arr1,arr2))
+
+
+
+// 69. Sqrt(x)
+
+// var mySqrt = function(x) {
+//     return Math.floor(Math.sqrt(x));
+// };
+
+
+// 412. Fizz Buzz
+
+// function fizzBuzz(n) {
+//     const result = []
+//     for (let i = 1; i <= n;i++) {
+//         if (i % 3 == 0 && i % 5 == 0) result.push("FizzBuzz");
+//         else if (i % 3 == 0 ) result.push("Fizz");
+//         else if (i % 5 == 0 ) result.push("Buzz");
+//         else result.push(i);
+//     }
+//     return result.join(',');
+// }
+
+// console.log(fizzBuzz(15));
+
+// let haystack = "hello"
+// let needle ="ll"
+// var strStr = function(haystack, needle) {
+//     for (let i = 0; i < haystack.length ; i++) {
+//         let check = haystack.slice(i,i + needle.length)
+//         if (check == needle) return i; 
+//     }
+//     return -1;
+// };
+
+// console.log(strStr(haystack,needle));
+
+// var isPalindrome = function(s) {
+//     s = s.replace(/[^a-zA-Z0-9]/g, '');
+//     s= s.toLowerCase();
+//     return s == s.split("").reverse("").join("")
+// };
+
+// let string = "0P";
+
+// console.log(isPalindrome(string));
+
+// var convertTemperature = function(celsius) {
+//     return [celsius+273.15 , celsius*1.80+32.00]
+// };
+
+// console.log(convertTemperature(36.50))
+
+
+// var sortColors = function(nums) {
+//     let lowest;
+//     let biggest;
+//     const result = []
+//     for (let i =0;i<nums.length;i++) {
+//         if (nums[i] < nums[i+1]) {
+//             result.push(nums[i]);
+//         } else {
+//             for (let j = i+2;j < nums.length;j++) {
+//                 if (nums[i] < nums[i+1]) {
+//                     result.push(nums[i]);
+//                 }
+//             }
+//         }
+//     }
+//     return result;
+// };
+
+// const nums = [2,0,2,1,1,0]
+
+// console.log(sortColors(nums))
+
+var plusOne = function(digits) {
+    const tmpInt = digits.map((value) => {return value})
+    console.log(tmpInt)
+    return Array.from(String(tmpInt) , Number);
 };
 
-arr1 = [
-    {"id": 1, "x": 1},
-    {"id": 2, "x": 9}
-], 
-arr2 = [
-    {"id": 3, "x": 5}
-]
+const digits = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3];
 
-newObj = []
-
-console.log(join(arr1,arr2))
-
+console.log(plusOne(digits));
