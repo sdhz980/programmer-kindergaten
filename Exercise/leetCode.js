@@ -288,12 +288,22 @@
 
 // console.log(sortColors(nums))
 
-var plusOne = function(digits) {
-    const tmpInt = digits.map((value) => {return value})
-    console.log(tmpInt)
-    return Array.from(String(tmpInt) , Number);
-};
+// var plusOne = function(digits) {
+//     const tmpInt = digits.map((value) => {return value})
+//     console.log(tmpInt)
+//     return Array.from(String(tmpInt) , Number);
+// };
 
-const digits = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3];
+// const digits = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3];
 
-console.log(plusOne(digits));
+// console.log(plusOne(digits));
+
+num1 = "11"
+num2 = "123"
+
+var addStrings = function(num1,num2) {
+    const num = []
+    return num1 + num2;
+}
+
+console.log(num1,num2);
