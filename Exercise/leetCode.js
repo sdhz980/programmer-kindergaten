@@ -298,12 +298,35 @@
 
 // console.log(plusOne(digits));
 
-num1 = "11"
-num2 = "123"
+// num1 = "11"
+// num2 = "123"
 
-var addStrings = function(num1,num2) {
-    const num = []
-    return num1 + num2;
-}
+// var addStrings = function(num1,num2) {
+//     const num = []
+//     return num1 + num2;
+// }
 
-console.log(num1,num2);
+// console.log(num1,num2);
+
+// var reverse = function(x) {
+//     let ans;
+//     const arr = [];
+//     const numArr = Array.from(x.toString())
+//     for(let i =0;i < numArr.length;i++) {
+//         arr.push(numArr[i])
+//     }
+//     ans = parseInt(arr.reverse().join(''));
+//     if (ans < (Math.pow(2,31) * -1) || ans > (Math.pow(2,31) -1)) return 0;
+//     return (x < 0 ) ? ans * - 1 : ans;
+// };
+
+// console.log(reverse(-312))
+
+var largestNumber = function(nums) {
+    const res = nums.sort((a,b) => a-b);
+    return res;
+};
+
+const nums = [3,30,34,5,9]
+
+console.log(largestNumber(nums))
