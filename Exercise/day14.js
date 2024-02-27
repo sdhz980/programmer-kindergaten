@@ -1,1 +1,1 @@
-test
+const number = 123;
