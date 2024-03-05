@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "LemonMilk";
+    src: url(./assets/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: "Bebas";
+    src: url(./assets/BebasNeue-Regular.otf);
+}
+
+@font-face {
+    font-family: "Bellota";
+    src: url(./assets/Bellota-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Saeda";
+    src: url(./assets/LTSaeada-Regular.otf);
+}
+
+.parallax {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.parallax img {
+    position: absolute;
+}
+
+.parallax img {
+    width: 100%;
+}
